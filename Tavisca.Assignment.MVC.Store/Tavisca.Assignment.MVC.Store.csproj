@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DefaultInMemoryStore.cs" />
+    <Compile Include="DefaultInMemoryTodoStore.cs" />
     <Compile Include="ITodoStore.cs" />
     <Compile Include="Priority.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
