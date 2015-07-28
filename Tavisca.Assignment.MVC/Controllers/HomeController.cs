@@ -31,6 +31,12 @@ namespace Tavisca.Assignment.MVC.Controllers
             return Index();
         }
 
+        public ActionResult Add()
+        {
+            ViewBag.DisableHeader = true;
+            return View();
+        }
+
          public List<TaskItem> TaskItems = new List<TaskItem>()
                 {
                     new TaskItem()
