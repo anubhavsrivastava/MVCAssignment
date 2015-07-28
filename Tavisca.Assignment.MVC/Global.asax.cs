@@ -16,6 +16,7 @@ namespace Tavisca.Assignment.MVC
 
         public static ITodoStore TodoStore;
         public static UnityContainer container = new UnityContainer();
+
         protected void Application_Start()
         {
             RegisterModules();
@@ -24,14 +25,19 @@ namespace Tavisca.Assignment.MVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
+            
             TodoStore = container.Resolve<ITodoStore>();
 
         }
 
+        void Session_Start(object sender, EventArgs e)
+        {
+            HttpContext.Current.Session.Add("TodoApp", "SessionBased");
+        }
+
         private static void RegisterModules()
         {
-            container.RegisterType<ITodoStore, DefaultInMemoryTodoStore>();
+            container.RegisterType<ITodoStore, SessionBasedDataStore>();
         }
     }
 }
