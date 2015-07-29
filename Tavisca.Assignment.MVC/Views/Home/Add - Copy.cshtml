@@ -1,0 +1,38 @@
+﻿
+
+<div class="demo-ribbon"><a href="#" onclick="history.back();return false;">
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="back">
+        <i class="material-icons" role="presentation">keyboard_backspace</i>
+        <span class="visuallyhidden">keyboard_backspace</span>
+    </button>
+</a></div>
+
+<main class="demo-main mdl-layout__content">
+    <div class="demo-container mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <form action="#">
+                <span class="mdl-layout-title">Add Todo</span>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell--12-col">
+                    <input class="mdl-textfield__input" type="text" id="titleInput" />
+                    <label class="mdl-textfield__label" for="titleInput">Title...</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield textfield-demo mdl-cell--12-col">
+                    <textarea class="mdl-textfield__input" type="text" rows="6" id="descriptionInput"></textarea>
+                    <label class="mdl-textfield__label" for="descriptionInput">Description...</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield textfield-demo mdl-cell--12-col">
+                    <label style="color: rgba(0,0,0,.26)">Priority</label>
+                    <input class="mdl-slider mdl-js-slider" type="range" min="1" max="5" value="2" id="priorityInput" />
+                </div>
+
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell--12-col">
+                    <input class="mdl-textfield__input" type="email" id="emailInput" />
+                    <label class="mdl-textfield__label" for="emailInput">Mail to...</label>
+                    <span class="mdl-textfield__error">Not a valid email address.</span>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</main>

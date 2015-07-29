@@ -9,32 +9,38 @@ namespace Tavisca.Assignment.MVC.Controllers
 {
     public class HomeController : Controller
     {
+        public ITodoStore TodoStore = MvcApplication.TodoStore;
+
 
         public ActionResult Seed()
         {
-             
             TaskItems.ForEach(td => TodoStore.Add(td));
-            return Index();
+            return RedirectToAction("Index");
         }
 
-        public ITodoStore TodoStore = MvcApplication.TodoStore;
-        // GET: Home
+        
         public ActionResult Index()
         {
-           
-            return View(TodoStore.GetAllTask());
+           return View(TodoStore.GetAllTask());
         }
         
-        public ActionResult Delete()
+        public ActionResult Delete(long id)
         {
-            TodoStore.Delete(1, false);
-            return Index();
+            TodoStore.Delete(id, false);
+            return RedirectToAction("Index"); 
         }
 
-        public ActionResult Add()
+        public ActionResult Archive(long id)
         {
-            ViewBag.DisableHeader = true;
-            return View();
+            TodoStore.Delete(id, true);
+            RedirectToAction("index");
+            return null;
+        }
+        
+        public ActionResult Add(TaskItem item)
+        {
+            RedirectToAction("index");
+            return null;
         }
 
          public List<TaskItem> TaskItems = new List<TaskItem>()

@@ -18,7 +18,7 @@ namespace Tavisca.Assignment.MVC.Store
         public TaskItem Add(TaskItem taskItem)
         {
             if (taskItem == null) throw new Exception("Failed To Create Task");
-            
+            taskItem.Id = Items.Count;
             Items.Add(taskItem);
             return GetTask(taskItem.Id);
         }

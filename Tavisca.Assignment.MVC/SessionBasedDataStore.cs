@@ -24,7 +24,9 @@ namespace Tavisca.Assignment.MVC
         public TaskItem Add(TaskItem taskItem)
         {
             if (taskItem == null) throw new Exception("Failed To Create Task");
+
             var tds = Items;
+            taskItem.Id = tds.Count;
             tds.Add(taskItem);
             Items = tds;
             return GetTask(taskItem.Id);
@@ -68,7 +70,7 @@ namespace Tavisca.Assignment.MVC
 
         public List<TaskItem> GetAllTask()
         {
-            return Items;
+            return Items.Where(item=>item.IsArchived==false).ToList();
         }
     }
 }
