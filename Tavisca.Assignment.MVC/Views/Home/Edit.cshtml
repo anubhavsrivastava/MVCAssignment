@@ -1,0 +1,43 @@
+﻿@using Tavisca.Assignment.MVC.Store
+@model TaskItem
+@{
+
+    Layout = null;
+}
+        <div class="demo-container mdl-grid">
+            <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+                <form method="post" action="/Home/update">
+                    <span class="mdl-layout-title">Update Todo</span>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell--12-col">
+                        <input class="mdl-textfield__input" name="Title" type="text" id="titleUpdate" required="required" value="@Model.Title" >
+                        <label class="mdl-textfield__label" for="titleUpdate">Title...</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield textfield-demo mdl-cell--12-col">
+                        <textarea class="mdl-textfield__input" name="Description" type="text" rows="6" id="descriptionUpdate" text="@Model.Description" required="required">@Model.Description</textarea>
+                        <label class="mdl-textfield__label" for="descriptionUpdate">Description...</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield textfield-demo mdl-cell--12-col">
+                        <label style="color: rgba(0,0,0,.26)">Priority</label>
+                        <input class="mdl-slider mdl-js-slider" type="range" name="Priority" min="1" max="5" value="@Model.Priority" id="priorityUpdate" />
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo mdl-cell--12-col">
+                        <input class="mdl-textfield__input" value="@Model.MailTo" name="MailTo" type="email" id="emailUpdate" />
+                        <label class="mdl-textfield__label" for="emailUpdate">Mail to...</label>
+                        <span class="mdl-textfield__error">Not a valid email address.</span>
+                    </div>
+                    <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" value="Update" id="UpdareSubmit" sdlick="submitAdd(); return false;">
+
+                </form>
+            </div>
+        </div>
+
+
+
+        <a href="#close" class="btn">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="topright">
+                <i class="material-icons" role="presentation">close</i>
+                <span class="visuallyhidden">close</span>
+            </button>
+        </a>
+     

@@ -84,7 +84,7 @@ namespace Tavisca.Assignment.MVC.Store.Test
                         Id = 1,
                         IsArchived = false,
                         LastUpdated = DateTime.Now,
-                        MailTo = new List<string>(){"asrivastava@tavisca.com","tmaini@tavisca.com"},
+                        MailTo = "asrivastava@tavisca.com",
                         Priority =  Priority.Highest,
                         Tags = new List<string>(){"C#","MVC"},
                         Title = "Implement Default Store"
@@ -96,7 +96,7 @@ namespace Tavisca.Assignment.MVC.Store.Test
                         Id = 2,
                         IsArchived = false,
                         LastUpdated = DateTime.Now,
-                        MailTo = new List<string>(){"asrivastava@tavisca.com","tmaini@tavisca.com"},
+                        MailTo = "asrivastava@tavisca.com",
                         Priority =  Priority.High,
                         Tags = new List<string>(){"C#","MVC"},
                         Title = "Do test that defaultStore works "
@@ -108,7 +108,7 @@ namespace Tavisca.Assignment.MVC.Store.Test
                         Id = 3,
                         IsArchived = false,
                         LastUpdated = DateTime.Now,
-                        MailTo = new List<string>(){"asrivastava@tavisca.com","tmaini@tavisca.com"},
+                        MailTo = "asrivastava@tavisca.com",
                         Priority =  Priority.Low,
                         Tags = new List<string>(){"C#","MVC"},
                         Title = "Package it into dll."

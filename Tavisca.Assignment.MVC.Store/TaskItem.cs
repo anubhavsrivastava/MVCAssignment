@@ -14,7 +14,7 @@ namespace Tavisca.Assignment.MVC.Store
 
         public string Description { get; set; }
 
-        public List<string> MailTo { get; set; }
+        public string MailTo { get; set; }
 
         public Priority Priority { get; set; }
 

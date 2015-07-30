@@ -1,0 +1,35 @@
+﻿ <a class="edittodo" href="#edit-todo">
+ 
+     <button class="edittodo" id="editbutton"></button>
+ 
+</a>
+<div class="modal" id="edit-todo" aria-hidden="true">
+    <div class="modal-dialog editmodal">
+
+
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+
+            function Edit(id) {
+                $.ajax({
+                    type: "GET",
+                    url: "/Home/edit/"+id,
+                    dataType: "json",
+
+                    success: function (d) {
+                        console.log(d);
+                        $(".editmodal").html(d);
+                        $('.edittodo').click();
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        // TODO: Show error
+                    }
+                });
+            }
+
+</script>
